@@ -76,20 +76,24 @@
     100% {left: 0;}
 }
 @keyframes slide-in {
-    from {left: -300px; opacity: 0;}
+    from {left: 300px; opacity: 0;}
     to {left: -0px; opacity: 1;}
 }
 @keyframes slide-out {
     from {left: 0px;opacity: 1;}
-    to { left: 300px;opacity: 0;}
+    to { left: -300px;opacity: 0;}
 }
 @keyframes zoom-out {
-    from {transform: translateZ(0); opacity: 1;}
-    to {transform: translateZ(1000); opacity: 0;}
+    0% {transform: translateZ(0); opacity: 1;}
+    25% {transform: translateZ(250); opacity: 0.3;}
+    50% {transform: translateZ(500); opacity: 0.1;}
+    100% {transform: translateZ(1000); opacity: 0;}
 }
 @keyframes zoom-in {
-    from {transform: translateZ(-1000); opacity: 0;}
-    to {transform: translateZ(0); opacity: 1;}
+    0% {transform: translateZ(-1000); opacity: 0;}
+    25% {transform: translateZ(-750); opacity: 0.1;}
+    50% {transform: translateZ(-500); opacity: 0.7;}
+    100% {transform: translateZ(0); opacity: 1;}
 }
 .view-transitions-slide-in-forward {
     animation-name: slide-in;
@@ -97,12 +101,12 @@
 }
 .view-transitions-slide-in-forward-reverse {
     animation-name: slide-in;
-    animation-duration: 200ms;
+    animation-duration: 100ms;
     animation-direction: reverse;
 }
 .view-transitions-slide-out-forward {
     animation-name: slide-out;
-    animation-duration: 200ms;
+    animation-duration: 100ms;
 }
 .view-transitions-slide-out-forward-reverse {
     animation-name: slide-out;
