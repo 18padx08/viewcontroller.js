@@ -1,0 +1,129 @@
+.viewControllerClass {
+    margin: 20px;
+}
+.navbarClass {
+    display: flex;
+    height: 80px;
+}
+.navbuttons {
+    height: 20px;
+}
+.navbuttons > button {
+    border-bottom: 1px black solid;
+    border-right: 1px black solid;
+    border-top: none;
+    border-left: none;
+    background-color: white;
+    position: relative;
+}
+.navbuttons > button:hover {
+    animation: jumpy-arrow;
+    animation-duration: 600ms;
+    animation-iteration-count: 1;
+}
+.navbuttons > button::before{
+    content: "⤺";
+    color:black;
+}
+.viewContainer {
+   /* display: flex;
+    align-items: stretch;*/
+    position: relative;
+    margin: 10px;
+}
+.viewClass {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+}
+.link.selected {
+    border-color: red;
+    width: 105px;
+    height: 35px;
+}
+.link {
+    background: rgb(233, 233, 233);
+    color: rgb(0, 0, 0);
+    margin: 10px;
+    width: 100px;
+    height: 30px;
+    padding: 10px;
+   
+    border: 1px black solid;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: width 0.2s, height 0.2s, color 0.2s, background-color 0.2s;
+}
+.link:hover {
+    color: rgb(0, 0, 0);
+    height: 35px;
+    width: 105px;
+    cursor: pointer;
+}
+.link > span {
+    width: 80px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+@keyframes jumpy-arrow {
+    0% {left:0;}
+    25% {left: -10px;}
+    50% {left: -15px;}
+    75% {left: -10px;}
+    100% {left: 0;}
+}
+@keyframes slide-in {
+    from {left: -300px; opacity: 0;}
+    to {left: -0px; opacity: 1;}
+}
+@keyframes slide-out {
+    from {left: 0px;opacity: 1;}
+    to { left: 300px;opacity: 0;}
+}
+@keyframes zoom-out {
+    from {transform: translateZ(0); opacity: 1;}
+    to {transform: translateZ(1000); opacity: 0;}
+}
+@keyframes zoom-in {
+    from {transform: translateZ(-1000); opacity: 0;}
+    to {transform: translateZ(0); opacity: 1;}
+}
+.view-transitions-slide-in-forward {
+    animation-name: slide-in;
+    animation-duration: 200ms;
+}
+.view-transitions-slide-in-forward-reverse {
+    animation-name: slide-in;
+    animation-duration: 200ms;
+    animation-direction: reverse;
+}
+.view-transitions-slide-out-forward {
+    animation-name: slide-out;
+    animation-duration: 200ms;
+}
+.view-transitions-slide-out-forward-reverse {
+    animation-name: slide-out;
+    animation-duration: 200ms;
+    animation-direction: reverse;
+}
+.view-transitions-zoom-out {
+    animation-name: zoom-out;
+    animation-duration: 200ms;
+}
+.view-transitions-zoom-in {
+    animation-name: zoom-in;
+    animation-duration: 200ms;
+}
+.view-transitions-zoom-out-reverse {
+    animation-name: zoom-out;
+    animation-duration: 200ms;
+    animation-direction: reverse;
+}
+.view-transitions-zoom-in-reverse {
+    animation-name: zoom-in;
+    animation-duration: 200ms;
+    animation-direction: reverse;
+}
